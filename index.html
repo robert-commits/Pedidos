@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#24113d"><title>Açaí Obrigatório</title>
+<style>
+:root{--ink:#f7f6fb;--purple:#ff4e55;--paper:#10101e;--panel:#191929;--panel2:#222237;--line:#303047;--muted:#aaa9bb;--lime:#ff6267;--shadow:0 14px 36px #05051080}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+.topbar{height:34px;background:#0b0b16;color:#c8c6d3;display:flex;align-items:center;justify-content:center;padding:0 16px;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:20;background:rgba(16,16,30,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{max-width:1040px;margin:auto;height:68px;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand-mark{width:35px;height:35px;border-radius:50%;background:#f3f2f8;color:#ff555d;display:grid;place-items:center;font-family:Georgia,serif;font-size:23px;font-style:italic}
+.brand-name{font-size:12px;line-height:1.05;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+.brand-name span{display:block;font-size:8px;letter-spacing:.23em;font-weight:500;margin-top:5px;color:#aaa9bb}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.text-link{border:0;background:none;color:var(--ink);font-size:11px;font-weight:700;padding:10px}
+.cart-btn{border:0;background:#ff4e55;color:white;border-radius:999px;padding:11px 15px;font-size:11px;font-weight:800;display:flex;gap:9px;align-items:center}
+.cart-count{background:white;color:#ff4e55;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-size:10px}
+main{max-width:1040px;margin:auto;padding:0 24px}
+.hero{min-height:330px;display:grid;grid-template-columns:1fr .85fr;align-items:center;gap:26px;padding:36px 0 40px}
+.eyebrow{font-size:9px;text-transform:uppercase;letter-spacing:.2em;font-weight:800;color:#ff7378;display:flex;align-items:center;gap:9px}
+.eyebrow:before{content:"";width:22px;height:1px;background:#ff7378}
+.hero h1{font-family:Inter,-apple-system,sans-serif;font-size:clamp(38px,5vw,58px);line-height:.99;letter-spacing:-.055em;font-weight:850;margin:17px 0 14px;max-width:500px}
+.hero h1 em{color:#ff6267;font-style:normal}
+.hero-copy{font-size:13px;line-height:1.7;color:var(--muted);max-width:390px;margin:0 0 20px}
+.primary-btn{border:0;background:#ff4e55;color:white;padding:14px 19px;border-radius:9px;font-weight:800;font-size:10px;letter-spacing:.05em;display:inline-flex;align-items:center;gap:18px;transition:.2s}
+.primary-btn:hover{background:#ff6b70;transform:translateY(-2px)}
+.hero-note{display:flex;align-items:center;gap:10px;margin-top:20px;color:var(--muted);font-size:10px}
+.hero-note b{color:var(--ink);font-size:10px}
+.hero-visual{position:relative;min-height:275px;background:linear-gradient(135deg,#38263d,#1d1c31 65%,#29243a);border:1px solid #3a3047;border-radius:18px;overflow:hidden;display:grid;place-items:center}
+.hero-visual:before{content:"";position:absolute;width:250px;height:250px;border:1px solid #ffffff20;border-radius:50%}
+.hero-visual:after{content:"";position:absolute;width:195px;height:195px;border:1px solid #ffffff18;border-radius:50%}
+.visual-caption{position:absolute;bottom:16px;left:18px;z-index:2;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#c5bccc}
+.bottle-stage{position:relative;z-index:1;width:150px;height:230px;display:grid;place-items:center}
+.bottle{width:96px;height:190px;border:1px solid #ffffff35;border-radius:17px 17px 22px 22px;background:linear-gradient(90deg,#48236a,#8854a8 48%,#4c2871);box-shadow:16px 20px 35px #05051080;position:relative;transform:rotate(-6deg)}
+.bottle:before{content:"";position:absolute;top:-21px;left:30px;width:36px;height:23px;border-radius:5px 5px 2px 2px;background:#d6d1dc}
+.bottle:after{content:"";position:absolute;left:9px;top:42px;width:76px;height:83px;background:#f9f6f2;border-radius:2px}
+.bottle-label{position:absolute;z-index:2;top:58px;left:13px;width:70px;text-align:center;color:#24113d;font-family:Georgia,serif;font-size:13px;line-height:1.05}
+.bottle-label small{display:block;font-family:Arial,sans-serif;font-size:5px;letter-spacing:.16em;margin-top:7px}
+.orbit-tag{position:absolute;z-index:3;right:8%;top:12%;width:67px;height:67px;border-radius:50%;background:#ff555d;color:white;display:grid;place-items:center;text-align:center;font-size:7px;line-height:1.3;font-weight:850;letter-spacing:.08em}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;padding:22px 0 18px;border-top:1px solid var(--line)}
+.section-kicker{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#ff777c;font-weight:800}
+.section-head h2{font-size:27px;font-weight:800;letter-spacing:-.04em;margin:7px 0 0}
+.section-desc{font-size:11px;color:var(--muted);max-width:250px;line-height:1.6}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 19px}
+.filter{border:1px solid #38384e;background:#1a1a2a;color:#c2c0ce;padding:9px 14px;border-radius:7px;font-size:10px;font-weight:700}
+.filter.active{background:#ff4e55;color:white;border-color:#ff4e55}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;padding-bottom:55px}
+.product{background:var(--panel);border:1px solid var(--line);border-radius:12px;min-width:0;overflow:hidden;transition:.22s}
+.product:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#51445f}
+.product-photo{height:160px;background:#242438;display:grid;place-items:center;position:relative;overflow:hidden}
+.product-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-placeholder{width:100%;height:100%;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 50% 45%,#3b3150,#222235 72%)}
+.photo-placeholder:before{content:"";position:absolute;width:120px;height:120px;border:1px solid #ffffff18;border-radius:50%}
+.mini-bottle{width:54px;height:116px;border-radius:11px 11px 14px 14px;background:linear-gradient(90deg,#4b286d,#8652a8,#4b286d);position:relative;box-shadow:12px 16px 24px #05051070;transform:rotate(-5deg)}
+.mini-bottle:before{content:"";position:absolute;top:-12px;left:16px;width:22px;height:15px;background:#d6d0d9;border-radius:4px 4px 1px 1px}
+.mini-bottle:after{content:"OBRIGATÓRIO";position:absolute;left:5px;right:5px;top:42px;padding:8px 1px;background:#faf8f4;color:#24113d;font-family:Georgia,serif;font-size:5px;text-align:center}
+.product-tag{position:absolute;top:10px;left:10px;background:#ff555d;color:white;padding:6px 8px;border-radius:4px;font-size:8px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.product-info{padding:13px}
+.product-category{font-size:8px;text-transform:uppercase;letter-spacing:.15em;color:#ff777c;font-weight:800}
+.product h3{font-size:14px;font-weight:750;margin:6px 0;color:#fff}
+.product-description{font-size:9px;line-height:1.5;color:#aaa9bb;min-height:27px}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:11px;padding-top:10px;border-top:1px solid var(--line)}
+.price{font-weight:800;font-size:12px}.price small{display:block;font-size:8px;font-weight:500;color:var(--muted);margin-top:3px}
+.add-btn{width:29px;height:29px;border:0;background:#ff4e55;color:white;border-radius:7px;font-size:19px;line-height:1}
+.empty-state{grid-column:1/-1;padding:35px;text-align:center;color:var(--muted);border:1px dashed var(--line)}
+.brand-strip{background:#1b1b2d;border:1px solid #303047;color:white;margin:0 0 28px;padding:30px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand-strip h2{font-size:25px;font-weight:800;max-width:380px;line-height:1.1;margin:0}
+.brand-strip p{color:#aaa9bb;font-size:11px;line-height:1.7;max-width:290px}
+footer{max-width:1040px;margin:auto;padding:25px 24px 38px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:9px;letter-spacing:.04em;border-top:1px solid var(--line)}
+.footer-brand{font-weight:850;color:var(--ink);letter-spacing:.12em}
+.overlay{position:fixed;inset:0;background:#050510c9;z-index:50;display:none;justify-content:flex-end}
+.overlay.open{display:flex}
+.drawer{background:#141424;width:min(450px,100%);height:100%;overflow:auto;padding:23px;box-shadow:-15px 0 45px #05051080}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}
+.drawer-head h2{font-size:25px;font-weight:800;margin:0}
+.close{border:0;background:none;color:var(--ink);font-size:25px;padding:4px 8px}
+.cart-items{padding:13px 0}
+.cart-row{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
+.cart-row strong{font-size:14px;font-weight:750}
+.cart-row small{display:block;color:var(--muted);font-size:9px;margin-top:5px}
+.qty{display:flex;align-items:center;gap:9px}
+.qty button{width:25px;height:25px;border:1px solid var(--line);background:#222237;color:white;border-radius:6px}
+.total{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid #5b5266;font-weight:850}
+.checkout{border-top:1px solid var(--line);padding-top:17px}
+.field{display:block;margin:12px 0}
+.field span{display:block;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px;color:#d6d3df}
+.field input,.field textarea,.field select{width:100%;border:1px solid #39394f;background:#202033;padding:12px;border-radius:6px;color:white;outline:none;font-size:12px}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#ff6267}
+.field textarea{min-height:65px;resize:vertical}
+.full{width:100%;justify-content:center;margin-top:10px}
+.muted-note{font-size:9px;line-height:1.6;color:var(--muted)}
+.admin-modal{position:fixed;inset:0;z-index:60;background:#050510d9;display:none;place-items:center;padding:15px}
+.admin-modal.open{display:grid}
+.admin-panel{background:#141424;border:1px solid var(--line);border-radius:12px;width:min(650px,100%);max-height:90vh;overflow:auto;padding:22px}
+.admin-panel h2{font-size:25px;font-weight:800;margin:0 0 8px}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.secondary-btn{border:1px solid #55516a;background:transparent;color:white;padding:10px 13px;font-size:10px;border-radius:6px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);background:#ff4e55;color:white;padding:11px 16px;font-size:11px;border-radius:7px;opacity:0;pointer-events:none;transition:.25s;z-index:90}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:700px){.topbar{height:31px;font-size:8px}.nav{height:61px;padding:0 16px}.brand-mark{width:32px;height:32px}.brand-name{font-size:10px}.text-link{display:none}main{padding:0 16px}.hero{grid-template-columns:1fr;gap:20px;padding:35px 0 32px;min-height:0}.hero h1{font-size:43px;max-width:390px}.hero-copy{font-size:12px}.hero-visual{min-height:240px}.bottle-stage{transform:scale(.78)}.orbit-tag{right:9%;top:10%;width:61px;height:61px;font-size:6px}.section-head{align-items:start;flex-direction:column;gap:5px}.section-head h2{font-size:25px}.section-desc{max-width:340px}.products{grid-template-columns:1fr;gap:10px;padding-bottom:35px}.product{display:grid;grid-template-columns:112px 1fr;min-height:132px}.product-photo{height:100%;min-height:132px}.mini-bottle{transform:scale(.78) rotate(-5deg)}.product-info{padding:12px}.product h3{font-size:13px}.product-description{min-height:24px}.product-bottom{margin-top:8px;padding-top:8px}.brand-strip{padding:23px;display:block;margin-bottom:15px}.brand-strip h2{font-size:23px}.brand-strip p{margin-bottom:0}.admin-grid{grid-template-columns:1fr}footer{padding:22px 16px;display:block;line-height:2.2}}
+</style></head><body>
+<div class="top">Açaí premium • Uma pausa que vale a pena</div><header><nav><div class="brand"><span class="mark">O</span><span>AÇAÍ OBRIGATÓRIO<small>EXPERIÊNCIA EM CADA GOLE</small></span></div><button class="cart" onclick="openCart()">Sua sacola <b id="count">0</b></button></nav></header>
+<main><section class="hero"><div><div class="eyebrow">O seu momento começa aqui</div><h1>Tem coisas que são <em>obrigatórias.</em></h1><p class="copy">Açaí em uma experiência prática, cremosa e feita para acompanhar o seu dia. Escolha sua opção favorita e peça em poucos passos.</p><button class="cta" onclick="document.querySelector('#catalogo').scrollIntoView({behavior:'smooth'})">EXPLORAR CARDÁPIO ↗</button></div><div class="visual"><span class="stamp">SEU NOVO<br>RITUAL<br>FAVORITO</span><div class="bottle"><div class="label">Açaí<br>Obrigatório<small>PREMIUM • 300 ML</small></div></div><span class="visual-caption">Uma experiência em cada gole</span></div></section>
+<section id="catalogo"><div class="head"><div><div class="kicker">Escolha o seu</div><h2>Nosso cardápio</h2></div><p>Descubra as opções disponíveis e encontre sua próxima combinação favorita.</p></div><div class="filters"><button class="filter active" data-f="Todos">Todos</button><button class="filter" data-f="Tradicional">Tradicionais</button><button class="filter" data-f="Fit">Fit</button></div><div class="products" id="products"></div></section>
+<section class="banner"><h2>Não é só açaí.<br>É seu momento obrigatório.</h2><p>Escolha seus produtos, monte sua sacola e finalize seu pedido pelo WhatsApp. Simples, direto e sem complicação.</p></section></main>
+<footer><div><b style="color:var(--ink);letter-spacing:.12em">AÇAÍ OBRIGATÓRIO</b><br>Feito com açaí premium.</div><div>© <span id="year"></span> Açaí Obrigatório<br><button class="secondary" onclick="openAdmin()">Ajustes da loja</button></div></footer>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()"><aside class="drawer"><div class="drawerhead"><h2>Sua sacola</h2><button class="close" onclick="closeCart()">×</button></div><div id="items"></div><div class="total"><span>Total</span><span id="total">R$ 0,00</span></div><label class="field"><span>Seu nome</span><input id="name" placeholder="Como podemos te chamar?"></label><label class="field"><span>WhatsApp</span><input id="phone" placeholder="(00) 00000-0000"></label><label class="field"><span>Como prefere receber?</span><select id="mode" onchange="document.getElementById('addressField').style.display=this.value==='Entrega'?'block':'none'"><option>Entrega</option><option>Retirada</option></select></label><label class="field" id="addressField"><span>Endereço de entrega</span><input id="address" placeholder="Rua, número e bairro"></label><label class="field"><span>Observações (opcional)</span><textarea id="notes" placeholder="Alguma informação importante?"></textarea></label><button class="cta full" onclick="sendOrder()">ENVIAR PEDIDO PELO WHATSAPP ↗</button><p class="note">O pedido será enviado para a loja pelo WhatsApp. O envio não confirma automaticamente pagamento ou entrega.</p></aside></div>
+<div class="admin" id="admin"><div class="panel"><div class="drawerhead"><h2>Ajustes da loja</h2><button class="close" onclick="closeAdmin()">×</button></div><p class="note">As alterações ficam salvas neste navegador e ainda não sincronizam com o PDV.</p><label class="field"><span>WhatsApp da loja (código do país + DDD + número)</span><input id="storePhone" placeholder="5511999999999"></label><div class="drawerhead"><b>Produtos</b><button class="secondary" onclick="addProduct()">+ Novo produto</button></div><div id="adminProducts"></div><div class="actions"><button class="cta" onclick="saveAdmin()">SALVAR</button><button class="secondary" onclick="exportData()">EXPORTAR</button><button class="secondary" onclick="document.getElementById('import').click()">IMPORTAR</button><input id="import" type="file" accept="application/json" hidden onchange="importData(event)"></div><p class="note">Cadastre os preços e, se desejar, o link público de uma foto. Os preços começam em branco para evitar divulgar valores desatualizados.</p></div></div><div class="toast" id="toast"></div>
+<script>
+const defaults=[{id:1,name:"Mousse de maracujá",category:"Tradicional",description:"Açaí com a opção de mousse de maracujá.",price:"",image:"",tag:""},{id:2,name:"Ninho e Nutella",category:"Tradicional",description:"Uma combinação cremosa para quem gosta de sabor marcante.",price:"",image:"",tag:""},{id:3,name:"Paçoca",category:"Tradicional",description:"Açaí com o sabor clássico da paçoca.",price:"",image:"",tag:""},{id:4,name:"Linha Fit",category:"Fit",description:"Uma opção da linha Fit com whey.",price:"",image:"",tag:"FIT"}];
+const get=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};let products=get('ao_products',defaults),cart=get('ao_cart',[]),storePhone=get('ao_phone','');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const brl=n=>Number(n||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function save(){localStorage.setItem('ao_products',JSON.stringify(products));localStorage.setItem('ao_cart',JSON.stringify(cart));localStorage.setItem('ao_phone',JSON.stringify(storePhone))}
+function render(filter='Todos'){let arr=products.filter(p=>filter==='Todos'||p.category===filter);document.getElementById('products').innerHTML=arr.length?arr.map(p=>`<article class="product"><div class="photo">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}" onerror="this.remove()">`:''}<div class="mock" ${p.image?'style="display:none"':''}></div>${p.tag?`<span class="tag">${esc(p.tag)}</span>`:''}</div><div class="info"><div class="cat">${esc(p.category)}</div><h3>${esc(p.name)}</h3><div class="desc">${esc(p.description)}</div><div class="bottom"><div class="price">${Number(p.price)>0?brl(p.price):'Consulte'}<small>300 ml • garrafinha</small></div><button class="add" onclick="add(${p.id})" ${Number(p.price)>0?'':'disabled style="opacity:.35"'}>+</button></div></div></article>`).join(''):'<p>Nenhum produto nesta categoria.</p>'}
+document.querySelector('.filters').onclick=e=>{let b=e.target.closest('[data-f]');if(!b)return;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render(b.dataset.f)};
+function add(id){let p=products.find(x=>x.id===id);if(!p||!(Number(p.price)>0))return;let x=cart.find(x=>x.id===id);x?x.qty++:cart.push({id,qty:1});save();renderCart();toast('Adicionado à sacola')}
+function qty(id,n){let x=cart.find(x=>x.id===id);if(!x)return;x.qty+=n;if(x.qty<1)cart=cart.filter(y=>y.id!==id);save();renderCart()}
+function renderCart(){cart=cart.filter(x=>products.some(p=>p.id===x.id));document.getElementById('count').textContent=cart.reduce((s,x)=>s+x.qty,0);document.getElementById('items').innerHTML=cart.length?cart.map(x=>{let p=products.find(y=>y.id===x.id);return `<div class="row"><div><strong>${esc(p.name)}</strong><small>${brl(p.price)} cada</small></div><div class="qty"><button onclick="qty(${p.id},-1)">−</button>${x.qty}<button onclick="qty(${p.id},1)">+</button></div></div>`}).join(''):'<p class="note">Sua sacola está vazia. Escolha um produto no cardápio para começar.</p>';document.getElementById('total').textContent=brl(cart.reduce((s,x)=>s+Number(products.find(p=>p.id===x.id)?.price||0)*x.qty,0))}
+function openCart(){document.getElementById('overlay').classList.add('open');renderCart()}function closeCart(){document.getElementById('overlay').classList.remove('open')}
+function sendOrder(){if(!cart.length)return toast('Sua sacola está vazia');let name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),mode=document.getElementById('mode').value,address=document.getElementById('address').value.trim(),notes=document.getElementById('notes').value.trim();if(!name||!phone)return toast('Preencha seu nome e WhatsApp');if(mode==='Entrega'&&!address)return toast('Informe o endereço');if(!storePhone)return toast('Configure o WhatsApp da loja nos ajustes');let total=cart.reduce((s,x)=>s+Number(products.find(p=>p.id===x.id).price)*x.qty,0),lines=cart.map(x=>{let p=products.find(y=>y.id===x.id);return `${x.qty}x ${p.name} — ${brl(p.price*x.qty)}`}).join('\n');let msg=`Olá! Quero fazer um pedido na Açaí Obrigatório.\n\nCliente: ${name}\nWhatsApp: ${phone}\nRecebimento: ${mode}${mode==='Entrega'?'\nEndereço: '+address:''}\n\nPedido:\n${lines}\n\nTotal dos produtos: ${brl(total)}${notes?'\nObservações: '+notes:''}`;window.open(`https://wa.me/${storePhone.replace(/\D/g,'')}?text=${encodeURIComponent(msg)}`,'_blank')}
+function openAdmin(){document.getElementById('storePhone').value=storePhone;renderAdmin();document.getElementById('admin').classList.add('open')}function closeAdmin(){document.getElementById('admin').classList.remove('open')}
+function renderAdmin(){document.getElementById('adminProducts').innerHTML=products.map((p,i)=>`<div style="padding:13px 0;border-bottom:1px solid var(--line)"><div class="grid"><label class="field"><span>Nome</span><input data-i="${i}" data-k="name" value="${esc(p.name)}"></label><label class="field"><span>Categoria</span><select data-i="${i}" data-k="category"><option ${p.category==='Tradicional'?'selected':''}>Tradicional</option><option ${p.category==='Fit'?'selected':''}>Fit</option></select></label><label class="field"><span>Preço (R$)</span><input type="number" min="0" step=".01" data-i="${i}" data-k="price" value="${esc(p.price)}"></label><label class="field"><span>Selo</span><input data-i="${i}" data-k="tag" value="${esc(p.tag||'')}"></label><label class="field"><span>Descrição</span><input data-i="${i}" data-k="description" value="${esc(p.description)}"></label><label class="field"><span>Link público da foto</span><input data-i="${i}" data-k="image" value="${esc(p.image)}"></label></div><button class="secondary" onclick="removeProduct(${p.id})">Remover</button></div>`).join('')}
+function saveAdmin(){document.querySelectorAll('#adminProducts [data-i]').forEach(el=>{let p=products[+el.dataset.i];if(p)p[el.dataset.k]=el.value});storePhone=document.getElementById('storePhone').value.replace(/\D/g,'');save();render(document.querySelector('.filter.active')?.dataset.f||'Todos');renderCart();closeAdmin();toast('Cardápio atualizado neste navegador')}
+function addProduct(){products.push({id:Date.now(),name:'Novo produto',category:'Tradicional',description:'',price:'',image:'',tag:''});renderAdmin()}function removeProduct(id){products=products.filter(p=>p.id!==id);cart=cart.filter(x=>x.id!==id);renderAdmin();save()}
+function exportData(){let a=document.createElement('a'),u=URL.createObjectURL(new Blob([JSON.stringify({products,storePhone},null,2)],{type:'application/json'}));a.href=u;a.download='cardapio-acai-obrigatorio.json';a.click();URL.revokeObjectURL(u)}
+function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!Array.isArray(d.products))throw 0;products=d.products;storePhone=d.storePhone||'';save();renderAdmin();document.getElementById('storePhone').value=storePhone;toast('Cardápio importado')}catch{toast('Arquivo inválido')}};r.readAsText(f);e.target.value=''}
+function toast(t){let e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
+document.getElementById('year').textContent=new Date().getFullYear();render();renderCart();
+</script></body></html>
